@@ -1,0 +1,16 @@
+{
+  "name": "axiesau",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ uliagilak/axies-infinity-auctions",
+    "create-local": "graph create --node http://localhost:8020/ uliagilak/axies-infinity-auctions",
+    "remove-local": "graph remove --node http://localhost:8020/ uliagilak/axies-infinity-auctions",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 uliagilak/axies-infinity-auctions"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.19.0",
+    "@graphprotocol/graph-ts": "0.19.0"
+  }
+}

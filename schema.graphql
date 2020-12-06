@@ -1,0 +1,33 @@
+type Auction @entity {
+  "Id of axie put up for auction"
+  id: ID!
+  "Auction duration"
+  duration: BigInt
+  "Ending price"
+  endingPrice: BigInt
+  "Starting price"
+  startingPrice: BigInt
+  "Auction issuer"
+  seller: User
+  "Finish price"
+  totalPrice:BigInt
+  "Whether auction is active"
+  active:Boolean
+}
+
+type User  @entity {
+  "Uer address"
+  id: ID!
+  "Users auctions"
+  auctions:[Auction!] @derivedFrom(field: "seller")
+}
+
+type Stats @entity {
+  id: ID!
+  "Active auctions"
+  activeauctions: BigInt
+  "Cancelled auctions"
+  cancelledautctions: BigInt
+  "Finished auctions"
+  finishedauctions: BigInt
+}
